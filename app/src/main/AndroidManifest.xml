@@ -16,9 +16,6 @@
             android:name=".mismascotas.agregarmascota.AgregarMascotaActivity"
             android:exported="false" />
         <activity
-            android:name=".calendario.CalendarioActivity"
-            android:exported="false" />
-        <activity
             android:name=".historialmedico.HistorialMedicoActivity"
             android:exported="false" />
         <activity
