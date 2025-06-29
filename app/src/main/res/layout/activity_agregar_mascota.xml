@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/patitas_background"
+    tools:context=".mismascotas.agregarmascota.AgregarMascotaActivity">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="24dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="@string/addPet"
+            android:textColor="@color/patitas_text_color"
+            android:textSize="35sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    NOMBRE      -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/name"
+            android:textColor="@color/patitas_text_color"
+            android:textSize="18sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:cardBackgroundColor="@color/patitas_component"
+            app:cardCornerRadius="10dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/patitas_text_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--    ESPECIE     -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/species"
+            android:textColor="@color/patitas_text_color"
+            android:textSize="18sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:cardBackgroundColor="@color/patitas_component"
+            app:cardCornerRadius="10dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etEspecie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/patitas_text_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--   RAZA-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/race"
+            android:textColor="@color/patitas_text_color"
+            android:textSize="18sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:cardBackgroundColor="@color/patitas_component"
+            app:cardCornerRadius="10dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etRaza"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/patitas_text_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--    SEXO    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/sex"
+            android:textColor="@color/patitas_text_color"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/rgSexo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbFemenino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"
+                android:textSize="16sp"
+                android:textColor="@color/patitas_text_color"
+                android:layout_marginEnd="16dp" />
+
+            <RadioButton
+                android:id="@+id/rbMasculino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male"
+                android:textColor="@color/patitas_text_color"
+                android:textSize="16sp"/>
+
+        </RadioGroup>
+
+        <!--    FECHA DE NACIMIENTO    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/birthday"
+            android:textColor="@color/patitas_text_color"
+            android:textSize="18sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:cardBackgroundColor="@color/patitas_component"
+            app:cardCornerRadius="10dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etFechaNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/patitas_text_color"
+                android:textSize="18sp">
+
+            </androidx.appcompat.widget.AppCompatEditText>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--    CASTRADO    -->
+        <CheckBox
+            android:id="@+id/cbCastrado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/castrated"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/patitas_text_color"
+            android:textSize="18sp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvGuardar"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/patitas_rosa"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/save"
+                    android:textColor="@color/patitas_text_color"
+                    android:textSize="20sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

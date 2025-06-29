@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Patitas al Dia</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="myPets">Mis mascotas</string>
+    <string name="pets">Mascotas</string>
+    <string name="calendar">Calendario</string>
+    <string name="history">Hisorial médico</string>
+    <string name="addPet">Agregar mascota</string>
+    <string name="name">Nombre</string>
+    <string name="species">Especie</string>
+    <string name="dog">Perro</string>
+    <string name="cat">Gato</string>
+    <string name="race">Raza</string>
+    <string name="sex">Sexo</string>
+    <string name="female">Femenino</string>
+    <string name="male">Masculino</string>
+    <string name="birthday">Fecha de nacimiento</string>
+    <string name="castrated">Castrado</string>
+    <string name="save">Guardar</string>
+
+
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/patitas_background"
+    tools:context=".MenuActivity">
+
+
+    <TextView
+        android:id="@+id/tvBienvenida"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="32dp"
+        android:gravity="center_vertical"
+        android:text="@string/welcome"
+        android:textColor="@color/patitas_text_color"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    mis mascotas    -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvMisMascotas"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="16dp"
+        app:cardBackgroundColor="@color/patitas_component"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/cvHistorialMedico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_patita"
+                app:tint="@color/patitas_rosa" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/myPets"
+                android:textColor="@color/patitas_text_color"
+                android:textSize="24sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--    historial   -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvHistorialMedico"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="60dp"
+        app:cardBackgroundColor="@color/patitas_component"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_registro"
+                app:tint="@color/patitas_rosa" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/history"
+                android:textColor="@color/patitas_text_color"
+                android:textSize="24sp" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
