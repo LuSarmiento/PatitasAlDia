@@ -12,11 +12,17 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.lu.patitasaldia.R
-import com.lu.patitasaldia.mismascotas.agregarmascota.Mascota
+import com.lu.patitasaldia.mismascotas.Mascota
+import com.lu.patitasaldia.mismascotas.AppDatabase
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+
 
 class AgregarMascotaActivity : AppCompatActivity() {
 
     private lateinit var cvGuardar: CardView
+
+    private var idMascota: Int? = null
 
     private lateinit var etNombre: EditText
     private lateinit var etEspecie: EditText
@@ -24,7 +30,6 @@ class AgregarMascotaActivity : AppCompatActivity() {
     private lateinit var rgSexo: RadioGroup
     private lateinit var etNacimiento: EditText
     private lateinit var cbCastrado: CheckBox
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,45 +45,76 @@ class AgregarMascotaActivity : AppCompatActivity() {
         initComponent()
         initListeners()
 
+        idMascota = intent.getIntExtra("idMascota", -1).takeIf { it != -1 }
 
+        if (idMascota != null) {
+            lifecycleScope.launch {
+                val db = AppDatabase.getDatabase(this@AgregarMascotaActivity)
+                val mascota = db.mascotaDao().obtenerPorId(idMascota!!)
+                mascota?.let {
+                    etNombre.setText(it.nombre)
+                    etEspecie.setText(it.especie)
+                    etRaza.setText(it.raza)
+                    etNacimiento.setText(it.fechaNacimiento)
+                    cbCastrado.isChecked = it.castrado
+                    rgSexo.check(if (it.sexo == "Femenino") R.id.rbFemenino else R.id.rbMasculino)
+                }
+            }
+        }
     }
 
-    private fun initComponent(){
+    private fun initComponent() {
         cvGuardar = findViewById<CardView>(R.id.cvGuardar)
 
         etNombre = findViewById<EditText>(R.id.etNombre)
         etEspecie = findViewById<EditText>(R.id.etEspecie)
         etRaza = findViewById<EditText>(R.id.etRaza)
-        rgSexo= findViewById<RadioGroup>(R.id.rgSexo)
+        rgSexo = findViewById<RadioGroup>(R.id.rgSexo)
         etNacimiento = findViewById<EditText>(R.id.etFechaNacimiento)
         cbCastrado = findViewById<CheckBox>(R.id.cbCastrado)
-
     }
 
-    private fun initListeners(){
+    private fun initListeners() {
         cvGuardar.setOnClickListener {
-            setMascota()
-            finish()
+
+            val nombre = etNombre.text.toString().trim()
+
+            if (nombre.isEmpty()) {
+                etNombre.error = "Este campo es obligatorio"
+                etNombre.requestFocus()
+                return@setOnClickListener
+            }
+
+            val db = AppDatabase.getDatabase(applicationContext)
+            val mascotaDao = db.mascotaDao()
+
+            val mascota = Mascota(
+                id = idMascota?: 0,
+                nombre = etNombre.text.toString(),
+                especie = etEspecie.text.toString(),
+                raza = etRaza.text.toString(),
+                fechaNacimiento = etNacimiento.text.toString(),
+                sexo = sexoSeleccionado(),
+                castrado = cbCastrado.isChecked
+            )
+
+            lifecycleScope.launch {
+                if (idMascota!=null) {
+                    mascotaDao.actualizar(mascota)
+                }
+                else{
+                    mascotaDao.insertarMascota(mascota)
+                }
+                finish()
+            }
         }
     }
 
-    private fun setMascota(){
-        val intent = Intent()
-        intent.putExtra("nombre",etNombre.text.toString())
-        intent.putExtra("especie", etEspecie.text.toString())
-        intent.putExtra("raza",etRaza.text.toString())
-        intent.putExtra("sexo",sexoSeleccionado())
-        intent.putExtra("fechaNacimiento",etNacimiento.text.toString())
-        intent.putExtra("castrado",cbCastrado.isChecked)
-
-        setResult(Activity.RESULT_OK, intent)
-    }
-
-    private fun sexoSeleccionado(): String{
-        return when(rgSexo.checkedRadioButtonId){
+    private fun sexoSeleccionado(): String {
+        return when (rgSexo.checkedRadioButtonId) {
             R.id.rbFemenino -> "Femenino"
             R.id.rbMasculino -> "Masculino"
-            else -> ""
+            else -> "-"
         }
     }
 

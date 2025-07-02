@@ -24,7 +24,6 @@ class MenuActivity : AppCompatActivity() {
         val cvMisMascotas = findViewById<CardView>(R.id.cvMisMascotas)
         val cvHistorialMedico = findViewById<CardView>(R.id.cvHistorialMedico)
 
-
         cvMisMascotas.setOnClickListener { navigateToMisMascotas() }
         cvHistorialMedico.setOnClickListener { navigateToHistorialMedico() }
     }

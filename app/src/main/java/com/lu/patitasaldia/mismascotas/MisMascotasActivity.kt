@@ -8,15 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lu.patitasaldia.R
 import com.lu.patitasaldia.mismascotas.agregarmascota.AgregarMascotaActivity
-import com.lu.patitasaldia.mismascotas.agregarmascota.Mascota
+import com.lu.patitasaldia.mismascotas.Mascota
+import kotlinx.coroutines.launch
 
 class MisMascotasActivity : AppCompatActivity() {
-
-    val listaMascotas = mutableListOf<Mascota>()
 
     private lateinit var rvMascotas: RecyclerView
     private lateinit var mascotasAdapter: MascotasAdapter
@@ -38,37 +38,34 @@ class MisMascotasActivity : AppCompatActivity() {
         initListeners()
         initUI()
 
-
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+    override fun onResume() {
+        super.onResume()
+        val db = AppDatabase.getDatabase(this)
+        val mascotaDao = db.mascotaDao()
 
-        if (requestCode == 1001 && resultCode == Activity.RESULT_OK && data != null) {
-            val nuevaMascota = Mascota(
-                nombre = data.getStringExtra("nombre") ?: "",
-                especie = data.getStringExtra("especie") ?: "",
-                raza = data.getStringExtra("raza") ?: "",
-                fechaNacimiento = data.getStringExtra("fechaNacimiento") ?: "",
-                sexo = data.getStringExtra("sexo") ?: "",
-                castrado = data.getBooleanExtra("castrado", false)
-            )
-
-            listaMascotas.add(nuevaMascota)
-            mascotasAdapter.notifyItemInserted(listaMascotas.size - 1)
+        lifecycleScope.launch {
+            val listaDesdeDB = mascotaDao.obtenerTodas()
+            mascotasAdapter.actualizarLista(listaDesdeDB)
         }
     }
 
     private fun initComponent() {
-
         rvMascotas = findViewById(R.id.rvMascotas)
         cvAgregarMascota = findViewById(R.id.cvAgregarMascota)
     }
 
     private fun initUI() {
-        mascotasAdapter = MascotasAdapter(listaMascotas)
         rvMascotas.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        mascotasAdapter = MascotasAdapter(mutableListOf())
         rvMascotas.adapter = mascotasAdapter
+
+        mascotasAdapter.onItemClicked = { mascota ->
+            val intent = Intent(this, DetalleMascotaActivity::class.java)
+            intent.putExtra("idMascota", mascota.id)
+            startActivity(intent)
+        }
     }
 
     private fun initListeners() {
