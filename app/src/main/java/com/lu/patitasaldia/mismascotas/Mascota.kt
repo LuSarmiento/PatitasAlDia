@@ -16,4 +16,4 @@ data class Mascota(
     val sexo: String,
     val fechaNacimiento: String,
     val castrado: Boolean
-): Parcelable
+) : Parcelable

@@ -13,22 +13,22 @@
         android:id="@+id/tvNombreTitulo"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:textAllCaps="true"
-        tools:text="nombre"
         android:textColor="@color/patitas_text_color"
         android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="nombre" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvDetalleNombre"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         app:cardBackgroundColor="@color/patitas_component"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,9 +56,9 @@
                 android:layout_height="65dp"
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
-                tools:text="nombre"
                 android:textColor="@color/patitas_text_color"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="nombre" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -87,9 +87,9 @@
             android:layout_height="65dp"
             android:layout_marginStart="8dp"
             android:gravity="center_vertical"
-            tools:text="especie"
             android:textColor="@color/patitas_text_color"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:text="especie" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -125,9 +125,9 @@
                 android:layout_height="65dp"
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
-                tools:text="raza"
                 android:textColor="@color/patitas_text_color"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="raza" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -156,9 +156,9 @@
             android:layout_height="65dp"
             android:layout_marginStart="8dp"
             android:gravity="center_vertical"
-            tools:text="sexo"
             android:textColor="@color/patitas_text_color"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:text="sexo" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -195,9 +195,9 @@
                 android:layout_height="65dp"
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
-                tools:text="01/01/2021"
                 android:textColor="@color/patitas_text_color"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="01/01/2021" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -226,9 +226,9 @@
             android:layout_height="65dp"
             android:layout_marginStart="8dp"
             android:gravity="center_vertical"
-            tools:text="si/no"
             android:textColor="@color/patitas_text_color"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:text="si/no" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -237,12 +237,13 @@
         android:layout_width="150dp"
         android:layout_height="55dp"
         android:layout_gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/cvEliminar"
         android:layout_marginBottom="18dp"
         app:cardBackgroundColor="@color/patitas_rosa"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/cvEliminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -258,12 +259,13 @@
         android:layout_width="150dp"
         android:layout_height="55dp"
         android:layout_gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="60dp"
         app:cardBackgroundColor="@color/patitas_rosa"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

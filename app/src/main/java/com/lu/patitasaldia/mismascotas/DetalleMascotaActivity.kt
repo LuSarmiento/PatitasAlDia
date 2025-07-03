@@ -83,7 +83,7 @@ class DetalleMascotaActivity : AppCompatActivity() {
                     .show()
             }
 
-        //            mascota?.let {
+            //            mascota?.let {
 //                lifecycleScope.launch {
 //                    mascotaDao.eliminarMascota(it)
 //                    finish()

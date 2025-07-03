@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:background="@color/patitas_background"
     tools:context=".MenuActivity">
 
@@ -13,7 +12,7 @@
     <TextView
         android:id="@+id/tvBienvenida"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="32dp"
         android:gravity="center_vertical"
@@ -23,6 +22,42 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPendientes"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginHorizontal="16dp"
+        android:gravity="center_vertical"
+        android:text="@string/todo"
+        android:textColor="@color/patitas_text_color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBienvenida" />
+
+    <View
+        android:id="@+id/viewRayita"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/patitas_beige"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPendientes" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPendientes"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewRayita">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
     <!--    mis mascotas    -->
@@ -101,4 +136,19 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAgregarPendiente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:contentDescription="Agregar pendiente"
+        android:src="@drawable/ic_mas"
+        app:backgroundTint="@color/patitas_beige"
+        app:layout_constraintBottom_toTopOf="@id/cvMisMascotas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/patitas_component">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

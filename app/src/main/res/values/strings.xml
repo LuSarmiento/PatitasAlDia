@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">Patitas al Dia</string>
     <string name="welcome">Bienvenido</string>
+    <string name="todo">Pendientes</string>
+
     <string name="myPets">Mis mascotas</string>
-    <string name="pets">Mascotas</string>
-    <string name="calendar">Calendario</string>
-    <string name="history">Hisorial médico</string>
     <string name="addPet">Agregar mascota</string>
     <string name="name">Nombre: </string>
     <string name="species">Especie: </string>
@@ -15,9 +14,16 @@
     <string name="birthday">Fecha de nacimiento: </string>
     <string name="castrated_select">Castrado</string>
     <string name="castrated_answer">Castrado: </string>
+
+    <string name="history">Historial médico</string>
+    <string name="addTask">Agregar pendiente</string>
+    <string name="pet">Mascota</string>
+    <string name="type">Tipo</string>
+    <string name="date">Fecha</string>
+    <string name="description">Descripción</string>
+
     <string name="edit">Editar</string>
     <string name="delete">Eliminar</string>
     <string name="save">Guardar</string>
-
 
 </resources>

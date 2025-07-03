@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PatitasAlDia"
         tools:targetApi="31">
         <activity
+            android:name=".pendientes.AgregarPendienteActivity"
+            android:exported="false" />
+        <activity
             android:name=".mismascotas.DetalleMascotaActivity"
             android:exported="false" />
         <activity
