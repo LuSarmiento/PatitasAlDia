@@ -48,11 +48,10 @@
         android:layout_height="30dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="5dp"
-        android:background="@color/patitas_component"
         app:layout_constraintTop_toBottomOf="@id/tvMascota" />
 
     <TextView
-        android:id="@+id/tvTipo"
+        android:id="@+id/tvTipoPendiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -67,13 +66,12 @@
         android:id="@+id/spTipoPendiente"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:background="@color/patitas_component"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvTipo" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTipoPendiente" />
 
     <TextView
-        android:id="@+id/tvFecha"
+        android:id="@+id/tvFechaPendiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -87,16 +85,16 @@
     <EditText
         android:id="@+id/etFecha"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="50dp"
+        android:hint="dd/mm/aa"
         android:focusable="false"
-        android:background="@color/patitas_component"
         android:layout_marginHorizontal="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvFecha"
+        app:layout_constraintTop_toBottomOf="@id/tvFechaPendiente"
         app:layout_constraintStart_toStartOf="parent"
         />
 
     <TextView
-        android:id="@+id/tvDescripcion"
+        android:id="@+id/tvDescripcionPendiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -108,12 +106,13 @@
         app:layout_constraintTop_toBottomOf="@id/etFecha" />
 
     <EditText
-        android:id="@+id/etDescripcion"
+        android:id="@+id/etDescripcionPendiente"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:paddingHorizontal="10dp"
         android:background="@color/patitas_component"
         android:layout_marginHorizontal="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvDescripcion"
+        app:layout_constraintTop_toBottomOf="@id/tvDescripcionPendiente"
         app:layout_constraintStart_toStartOf="parent"
         />
 
@@ -128,7 +127,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etDescripcion">
+        app:layout_constraintTop_toBottomOf="@id/etDescripcionPendiente">
 
         <TextView
             android:layout_width="match_parent"

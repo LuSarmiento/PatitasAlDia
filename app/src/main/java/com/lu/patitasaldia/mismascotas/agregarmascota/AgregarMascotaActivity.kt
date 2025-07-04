@@ -1,6 +1,7 @@
 package com.lu.patitasaldia.mismascotas.agregarmascota
 
 import android.app.Activity
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.CheckBox
@@ -16,6 +17,7 @@ import com.lu.patitasaldia.mismascotas.Mascota
 import com.lu.patitasaldia.mismascotas.AppDatabase
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
+import java.util.Calendar
 
 
 class AgregarMascotaActivity : AppCompatActivity() {
@@ -66,12 +68,12 @@ class AgregarMascotaActivity : AppCompatActivity() {
     private fun initComponent() {
         cvGuardar = findViewById<CardView>(R.id.cvGuardar)
 
-        etNombre = findViewById<EditText>(R.id.etNombre)
-        etEspecie = findViewById<EditText>(R.id.etEspecie)
-        etRaza = findViewById<EditText>(R.id.etRaza)
+        etNombre = findViewById(R.id.etNombre)
+        etEspecie = findViewById(R.id.etEspecie)
+        etRaza = findViewById(R.id.etRaza)
         rgSexo = findViewById<RadioGroup>(R.id.rgSexo)
-        etNacimiento = findViewById<EditText>(R.id.etFechaNacimiento)
-        cbCastrado = findViewById<CheckBox>(R.id.cbCastrado)
+        etNacimiento = findViewById(R.id.etFechaNacimiento)
+        cbCastrado = findViewById(R.id.cbCastrado)
     }
 
     private fun initListeners() {
@@ -107,6 +109,21 @@ class AgregarMascotaActivity : AppCompatActivity() {
                 }
                 finish()
             }
+        }
+
+        etNacimiento.setOnClickListener {
+            val calendar = Calendar.getInstance()
+            val datePicker = DatePickerDialog(
+                this,
+                { _, year, month, dayOfMonth ->
+                    val fechaFormateada = "%02d/%02d/%04d".format(dayOfMonth, month + 1, year)
+                    etNacimiento.setText(fechaFormateada)
+                },
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+            )
+            datePicker.show()
         }
     }
 

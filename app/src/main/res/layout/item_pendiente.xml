@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="@color/patitas_component"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/ivMenuPendiente"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Opciones"
+            android:src="@drawable/ic_more_vert_svgrepo_com"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/patitas_text_color" />
+
+        <!-- Descripción -->
+        <TextView
+            android:id="@+id/tvDescripcionPendiente"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/patitas_text_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/ivMenuPendiente"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Descripción del pendiente" />
+
+        <!-- Fecha -->
+        <TextView
+            android:id="@+id/tvFechaPendiente"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/patitas_text_color"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescripcionPendiente"
+            tools:text="04/07/2025" />
+
+        <!-- Tipo -->
+        <TextView
+            android:id="@+id/tvTipoPendiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Vacuna"
+            android:textStyle="italic"
+            android:textSize="14sp"
+            android:textColor="@color/patitas_rosa_oscuto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFechaPendiente" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

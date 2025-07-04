@@ -49,7 +49,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPendientes"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="370dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,7 @@
         android:layout_height="70sp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="16dp"
-        app:cardBackgroundColor="@color/patitas_component"
+        app:cardBackgroundColor="@color/patitas_rosa"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/cvHistorialMedico"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,14 +85,14 @@
                 android:layout_height="45dp"
                 android:layout_marginHorizontal="10dp"
                 android:src="@drawable/ic_patita"
-                app:tint="@color/patitas_rosa" />
+                app:tint="@color/patitas_component" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/myPets"
                 android:textColor="@color/patitas_text_color"
-                android:textSize="24sp" />
+                android:textSize="26sp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -106,7 +106,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="60dp"
-        app:cardBackgroundColor="@color/patitas_component"
+        app:cardBackgroundColor="@color/patitas_rosa"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,14 +123,14 @@
                 android:layout_height="45dp"
                 android:layout_marginHorizontal="10dp"
                 android:src="@drawable/ic_registro"
-                app:tint="@color/patitas_rosa" />
+                app:tint="@color/patitas_component" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/history"
                 android:textColor="@color/patitas_text_color"
-                android:textSize="24sp" />
+                android:textSize="26sp" />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

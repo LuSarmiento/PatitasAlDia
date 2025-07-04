@@ -1,7 +1,6 @@
 package com.lu.patitasaldia.mismascotas
 
 import androidx.room.*
-import com.lu.patitasaldia.mismascotas.Mascota
 
 @Dao
 interface MascotaDao {
