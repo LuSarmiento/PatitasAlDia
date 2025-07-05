@@ -29,7 +29,6 @@ class AgregarPendienteActivity : AppCompatActivity() {
     private lateinit var cvGuardar: CardView
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -56,14 +55,19 @@ class AgregarPendienteActivity : AppCompatActivity() {
         lifecycleScope.launch {
             listaMascotas = dao.obtenerTodas()
             val nombres = listaMascotas.map { it.nombre }
-            val adapter = ArrayAdapter(this@AgregarPendienteActivity, android.R.layout.simple_spinner_item, nombres)
+            val adapter = ArrayAdapter(
+                this@AgregarPendienteActivity,
+                android.R.layout.simple_spinner_item,
+                nombres
+            )
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spMascota.adapter = adapter
 
 
 
             if (idPendiente != null) {
-                val daoPendiente = AppDatabase.getDatabase(this@AgregarPendienteActivity).pendienteMedicoDao()
+                val daoPendiente =
+                    AppDatabase.getDatabase(this@AgregarPendienteActivity).pendienteMedicoDao()
                 val pendiente = daoPendiente.obtenerPorId(idPendiente!!)
 
                 etDescripcion.setText(pendiente.descripcion)
@@ -81,13 +85,12 @@ class AgregarPendienteActivity : AppCompatActivity() {
         }
     }
 
-    private fun initListeners(){
+    private fun initListeners() {
         etFecha.setOnClickListener {
             val calendar = Calendar.getInstance()
             val datePicker = DatePickerDialog(
                 this,
-                { _, year, month
-                  , dayOfMonth ->
+                { _, year, month, dayOfMonth ->
                     val fechaFormateada = "%02d/%02d/%04d".format(dayOfMonth, month + 1, year)
                     etFecha.setText(fechaFormateada)
                 },
@@ -109,7 +112,8 @@ class AgregarPendienteActivity : AppCompatActivity() {
             )
 
             lifecycleScope.launch {
-                val dao = AppDatabase.getDatabase(this@AgregarPendienteActivity).pendienteMedicoDao()
+                val dao =
+                    AppDatabase.getDatabase(this@AgregarPendienteActivity).pendienteMedicoDao()
 
                 if (idPendiente == null) {
                     dao.insertar(pendiente)
@@ -122,7 +126,6 @@ class AgregarPendienteActivity : AppCompatActivity() {
         }
 
     }
-
 
 
     private fun initComponents() {

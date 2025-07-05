@@ -45,7 +45,7 @@ class HistorialMedicoActivity : AppCompatActivity() {
 
     }
 
-    private fun initComponents(){
+    private fun initComponents() {
         spFiltroMascota = findViewById(R.id.spFiltroMascota)
         spFiltroTipo = findViewById(R.id.spFiltroTipo)
         rvHistorial = findViewById(R.id.rvHistorial)
@@ -57,17 +57,31 @@ class HistorialMedicoActivity : AppCompatActivity() {
 
     }
 
-    private fun initFiltros(){
+    private fun initFiltros() {
         lifecycleScope.launch {
             listaMascotas = db.mascotaDao().obtenerTodas()
             // Cargar mascotas
             val nombresMascotas = listOf("Todas las mascotas") + listaMascotas.map { it.nombre }
-            val adapterMascotas = ArrayAdapter(this@HistorialMedicoActivity, android.R.layout.simple_spinner_dropdown_item, nombresMascotas)
+            val adapterMascotas = ArrayAdapter(
+                this@HistorialMedicoActivity,
+                android.R.layout.simple_spinner_dropdown_item,
+                nombresMascotas
+            )
             spFiltroMascota.adapter = adapterMascotas
 
             // Cargar tipos
-            val tipos = listOf("Todos los tipos", "Vacuna", "Medicamento", "Antiparasitario", "Visita al veterinario")
-            val adapterTipos = ArrayAdapter(this@HistorialMedicoActivity, android.R.layout.simple_spinner_dropdown_item, tipos)
+            val tipos = listOf(
+                "Todos los tipos",
+                "Vacuna",
+                "Medicamento",
+                "Antiparasitario",
+                "Visita al veterinario"
+            )
+            val adapterTipos = ArrayAdapter(
+                this@HistorialMedicoActivity,
+                android.R.layout.simple_spinner_dropdown_item,
+                tipos
+            )
             spFiltroTipo.adapter = adapterTipos
 
             // Cargar historial por primera vez
@@ -75,18 +89,30 @@ class HistorialMedicoActivity : AppCompatActivity() {
         }
     }
 
-    private fun initListeners(){
+    private fun initListeners() {
         spFiltroMascota.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 cargarHistorial()
             }
+
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
         spFiltroTipo.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 cargarHistorial()
             }
+
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
     }
@@ -116,7 +142,7 @@ class HistorialMedicoActivity : AppCompatActivity() {
         }
     }
 
-    private fun mostrarDialogoEliminar(pendiente: PendienteMedico){
+    private fun mostrarDialogoEliminar(pendiente: PendienteMedico) {
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)
         builder.setTitle("¿Eliminar pendiente?")
         builder.setMessage("¿Estás seguro de que querés eliminar este pendiente del historial?")

@@ -9,7 +9,6 @@
     android:background="@color/patitas_background"
     tools:context=".mismascotas.agregarmascota.AgregarMascotaActivity">
 
-
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="match_parent"
@@ -177,11 +176,10 @@
                 android:id="@+id/etFechaNacimiento"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="dd/mm/aa"
                 android:focusable="false"
-                app:layout_constraintTop_toBottomOf="@id/tvFechaPendiente"
+                android:hint="dd/mm/aa"
                 app:layout_constraintStart_toStartOf="parent"
-                />
+                app:layout_constraintTop_toBottomOf="@id/tvFechaPendiente" />
 
         </androidx.cardview.widget.CardView>
 

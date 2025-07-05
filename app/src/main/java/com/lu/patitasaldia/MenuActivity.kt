@@ -80,7 +80,8 @@ class MenuActivity : AppCompatActivity() {
         cvMisMascotas.setOnClickListener { navigateToMisMascotas() }
         cvHistorialMedico.setOnClickListener { navigateToHistorialMedico() }
         fabAgregarPendiente.setOnClickListener {
-            val intent = Intent(this, com.lu.patitasaldia.pendientes.AgregarPendienteActivity::class.java)
+            val intent =
+                Intent(this, com.lu.patitasaldia.pendientes.AgregarPendienteActivity::class.java)
             startActivity(intent)
         }
     }

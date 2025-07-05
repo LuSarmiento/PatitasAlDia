@@ -11,13 +11,14 @@ class PendienteAdapter(
     private val onEliminar: (PendienteMedico) -> Unit,
     private val onEditar: (PendienteMedico) -> Unit
 
-): RecyclerView.Adapter<PendienteViewHolder>(){
+) : RecyclerView.Adapter<PendienteViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): PendienteViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_pendiente, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_pendiente, parent, false)
         return PendienteViewHolder(view)
     }
 
@@ -35,7 +36,7 @@ class PendienteAdapter(
 
     override fun getItemCount() = pendientes.size
 
-    fun actualizarLista(nuevosPendientes: List<PendienteMedico>){
+    fun actualizarLista(nuevosPendientes: List<PendienteMedico>) {
         pendientes.clear()
         pendientes.addAll(nuevosPendientes)
         notifyDataSetChanged()

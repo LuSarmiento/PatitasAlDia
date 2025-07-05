@@ -9,13 +9,14 @@ class HistorialAdapter(
     private var pendientes: MutableList<PendienteMedico>,
     private val onEliminar: (PendienteMedico) -> Unit
 
-): RecyclerView.Adapter<HistorialViewHolder>(){
+) : RecyclerView.Adapter<HistorialViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): HistorialViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_pendiente, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_pendiente, parent, false)
         return HistorialViewHolder(view)
     }
 
@@ -31,7 +32,7 @@ class HistorialAdapter(
 
     override fun getItemCount() = pendientes.size
 
-    fun actualizarLista(nuevosPendientes: List<PendienteMedico>){
+    fun actualizarLista(nuevosPendientes: List<PendienteMedico>) {
         pendientes.clear()
         pendientes.addAll(nuevosPendientes)
         notifyDataSetChanged()

@@ -8,7 +8,6 @@
     android:background="@color/patitas_background"
     tools:context=".mismascotas.DetalleMascotaActivity">
 
-
     <TextView
         android:id="@+id/tvNombreTitulo"
         android:layout_width="match_parent"
@@ -275,6 +274,5 @@
             android:textSize="20sp" />
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

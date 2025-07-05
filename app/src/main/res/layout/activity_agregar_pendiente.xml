@@ -86,12 +86,11 @@
         android:id="@+id/etFecha"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="dd/mm/aa"
-        android:focusable="false"
         android:layout_marginHorizontal="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvFechaPendiente"
+        android:focusable="false"
+        android:hint="dd/mm/aa"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvFechaPendiente" />
 
     <TextView
         android:id="@+id/tvDescripcionPendiente"
@@ -109,12 +108,11 @@
         android:id="@+id/etDescripcionPendiente"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:paddingHorizontal="10dp"
-        android:background="@color/patitas_component"
         android:layout_marginHorizontal="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvDescripcionPendiente"
+        android:background="@color/patitas_component"
+        android:paddingHorizontal="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvDescripcionPendiente" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvGuardar"

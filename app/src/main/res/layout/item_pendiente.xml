@@ -55,13 +55,13 @@
             android:id="@+id/tvTipoPendiente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Vacuna"
-            android:textStyle="italic"
-            android:textSize="14sp"
             android:textColor="@color/patitas_rosa_oscuto"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="14sp"
+            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvFechaPendiente" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFechaPendiente"
+            tools:text="Vacuna" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

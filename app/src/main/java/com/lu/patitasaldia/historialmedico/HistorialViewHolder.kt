@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.lu.patitasaldia.R
 
-class HistorialViewHolder(view: View): RecyclerView.ViewHolder(view) {
+class HistorialViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val tvDescripcion: TextView = view.findViewById(R.id.tvDescripcionPendiente)
     private val tvFecha: TextView = view.findViewById(R.id.tvFechaPendiente)
