@@ -18,7 +18,7 @@ import com.lu.patitasaldia.mismascotas.MisMascotasActivity
 import com.lu.patitasaldia.pendientes.AgregarPendienteActivity
 import com.lu.patitasaldia.pendientes.PendienteAdapter
 import com.lu.patitasaldia.pendientes.PendienteMedico
-import com.lu.patitasaldia.pendientes.PendienteMedicoDao
+import com.lu.patitasaldia.pendientes.fechaFormatoDate
 import kotlinx.coroutines.launch
 
 class MenuActivity : AppCompatActivity() {
@@ -128,7 +128,8 @@ class MenuActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             val pendientesDesdeDB = pendienteDao.obtenerPendientesActivos()
-            pendientesAdapter.actualizarLista(pendientesDesdeDB)
+            val pendientesOrdenados = pendientesDesdeDB.sortedBy { it.fechaFormatoDate() }
+            pendientesAdapter.actualizarLista(pendientesOrdenados)
         }
     }
 
